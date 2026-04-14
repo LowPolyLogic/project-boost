@@ -1,0 +1,17 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Project Boost"
+config/description="Very simple project, first of three in the GameDev.tv course on Udemy. Currently there is only a print script on it, but since I'm calling it for the day, this is my first commit."
+config/version="0.05"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
