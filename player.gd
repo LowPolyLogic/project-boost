@@ -1,17 +1,17 @@
-extends Node3D # Acesses everything on the node it's attached to
+extends Node3D
 
-# Called when the node enters the scene tree for the first time.
-
-# Essentially just a "start" to the program
-func _ready() -> void:
-	# Just clowning on ArcSys, hahaha.
-	print("Do dreams come true...? NIGHTMARE ONE! COMMENCE!")
-	# Following the course's orders... my way.
-	print("DO NOT DISMAY, LIFE GOES ON")
-	print("7x6")
-
+# This essentially means the position is x = 2, y = 5 and z = 0.
+# Example: var first_vector: Vector3 = Vector3(2, 5, 0).
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-# Essentially works as a tick rate, which is how it checks for frame updates.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("ui_accept"):
+		# Makes y increase with delta, which means you hold spacebar to move up.
+		position.y += delta
+		
+	if Input.is_action_pressed("ui_left"): # Makes the player rotate clockwise
+		rotate_z(delta)
+	elif Input.is_action_pressed("ui_right"):
+		rotate_z(-delta)
+	else: pass
+# The challenge above was rotating counter-clockwise, so I used elif and -delta.

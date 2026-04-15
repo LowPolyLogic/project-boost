@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Project Boost"
-config/description="Still really crude, but since it has movement and an alternate scene with different lighting/atmosphere, I am oficially cataloging it as V0.1."
-config/version="0.1"
-run/main_scene="uid://b5wlv032krqmm"
+config/description="Now a little bit more polished, with the player being instanced in the level and being actively controllable, albeit movement is limited. I'm calling this V0.2 since it seems like a big improvement from the last update."
+config/version="0.2"
+run/main_scene="uid://c41qqpgk3iuau"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
