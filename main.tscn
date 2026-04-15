@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5wlv032krqmm"]
+
+[sub_resource type="GDScript" id="GDScript_7dm0k"]
+script/source = "extends Node3D
+
+# This essentially means the position is x = 2, y = 5 and z = 0.
+# Example: var first_vector: Vector3 = Vector3(2, 5, 0).
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_pressed(\"ui_accept\"):
+		# Makes y increase with delta, which means you hold spacebar to move up.
+		position.y += delta
+		
+	if Input.is_action_pressed(\"ui_left\"): # Makes the player rotate clockwise
+		rotate_z(delta)
+	elif Input.is_action_pressed(\"ui_right\"):
+		rotate_z(-delta)
+	else: pass
+# The challenge above was rotating counter-clockwise, so I used elif and -delta.
+"
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7dm0k"]
+
+[node name="Player" type="Node3D"]
+script = SubResource("GDScript_7dm0k")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_7dm0k")
