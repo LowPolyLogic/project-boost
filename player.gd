@@ -1,17 +1,19 @@
-extends Node3D
+extends RigidBody3D
 
-# This essentially means the position is x = 2, y = 5 and z = 0.
-# Example: var first_vector: Vector3 = Vector3(2, 5, 0).
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept"):
-		# Makes y increase with delta, which means you hold spacebar to move up.
-		position.y += delta
+		# 3D Nodes store rotation in a matrix called a basis;
+		# When you press space, you go up in the Y axis * delta (FPS) * 1000.
+		apply_central_force(basis.y * delta * 1000)
 		
-	if Input.is_action_pressed("ui_left"): # Makes the player rotate clockwise
-		rotate_z(delta)
-	elif Input.is_action_pressed("ui_right"):
-		rotate_z(-delta)
+		# Essentially, delta makes it stable through FPS variations;
+		# apply_... moves a rigid body with force/torque, but it needs a vector;
+		# The vector determines the direction it moves in the XYZ axis, like so:
+		
+	if Input.is_action_pressed("ui_left"): # Makes the player rotate clockwise.
+		apply_torque(Vector3(0, 0.0, 100.0) * delta)
+	elif Input.is_action_pressed("ui_right"): # Now guess what it does! hehe
+		apply_torque(Vector3(0.0, 0.0, -100.0) * delta)
 	else: pass
-# The challenge above was rotating counter-clockwise, so I used elif and -delta.

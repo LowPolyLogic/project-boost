@@ -8,11 +8,17 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Project Boost"
-config/description="Now a little bit more polished, with the player being instanced in the level and being actively controllable, albeit movement is limited. I'm calling this V0.2 since it seems like a big improvement from the last update."
-config/version="0.2"
+config/description="Now a little bit more polished, with the player being instanced in the level and being actively controllable, albeit movement is limited. I'm calling this V0.2 since it seems like a big improvement from the last update.
+
+- V0.3: Now uses torque and force to move the player, and also has rigid body physics, of course. Currently playable, so I'm going to start publishing exported projects."
+config/version="0.3"
 run/main_scene="uid://c41qqpgk3iuau"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
