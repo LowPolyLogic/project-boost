@@ -1,2 +1,4 @@
-- On my friend's PC, as soon as he lands he can't take off again. In mine it's normal, so I'm gonna test it with another local machine soon;
+- On my friend's PC, as soon as he lands he can't take off again. In mine it's normal, so I'm gonna test it with another local machine soon; 
+Update 3:20AM 16/4/26: tested on other machine, worked as intended. Weird. Friend lives far away though.
+Update 6:04PM 16/4/26: my friend tested V0.3 on his laptop and it didn't work still. I tested it on a spare laptop and it works. Weird, but V0.35 should fix that. We'll see!
 - If you land horizontally, you cannot take off again since you're a laid-down cylinder. "IT'S NOT A BUG, IT'S A FEATURE!" - VinesauceJoel

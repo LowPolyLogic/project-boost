@@ -3,17 +3,37 @@ extends RigidBody3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("boost"):
 		# 3D Nodes store rotation in a matrix called a basis;
-		# When you press space, you go up in the Y axis * delta (FPS) * 1000.
+		# When you hold Space/W, yo   u go up in the Y axis * delta (FPS) * 1000.
 		apply_central_force(basis.y * delta * 1000)
 		
 		# Essentially, delta makes it stable through FPS variations;
 		# apply_... moves a rigid body with force/torque, but it needs a vector;
 		# The vector determines the direction it moves in the XYZ axis, like so:
-		
-	if Input.is_action_pressed("ui_left"): # Makes the player rotate clockwise.
+			   
+	if Input.is_action_pressed("tilt_left"): # Makes the player rotate clockwise.
 		apply_torque(Vector3(0, 0.0, 100.0) * delta)
-	elif Input.is_action_pressed("ui_right"): # Now guess what it does! hehe
+	elif Input.is_action_pressed("tilt_right"): # Now guess what it does! hehe
 		apply_torque(Vector3(0.0, 0.0, -100.0) * delta)
 	else: pass
+
+# This function does something when the 3D body collides with something else;
+# match works like this: if you reach the landing pad, it prints "congrulation!";
+# it prints "standing bye" when you start and you're standing on the launch pad;
+# the underline case is for anything else, literally any other 3d object.
+func _on_body_entered(body: Node) -> void:
+	match body.name:
+		"Landing Pad":
+			print("Congrulation! Very Victory!")
+			victorious_win()
+		"Launch Pad":
+			print("Standing bye four takeoffs!")
+		_:
+			print("NIGHTMARE OVER! YOU HAVE HITTED A KILL YOU")
+			get_tree().reload_current_scene()
+
+# This function is your win condition:
+func victorious_win() -> void:
+		get_tree().quit()
+		
