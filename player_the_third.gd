@@ -34,6 +34,6 @@ func _on_body_entered(body: Node) -> void:
 			get_tree().call_deferred("reload_current_scene")
 
 # This function takes in level_two as the parameter, so thou must declareth str
-func victorious_win(level_two: String) -> void:
-		get_tree().call_deferred("change_scene_to_file", level_two)
+func victorious_win(level_four: String) -> void:
+		get_tree().call_deferred("change_scene_to_file", level_four)
 		

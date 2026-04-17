@@ -18,11 +18,12 @@ config/name="Project Boost"
 config/description="Now a little bit more polished, with the player being instanced in the level and being actively controllable, albeit movement is limited. I'm calling this V0.2 since it seems like a big improvement from the last update.
 
 - V0.3: Now uses torque and force to move the player, and also has rigid body physics, of course. Currently playable, so I'm going to start publishing exported projects.
-- V0.35: Now has a gameplay loop! When you hit the floor, you go back to the start; When you reach the green platform, the game ends! Pretty neat, but wait until you get to read the messages for landings and the likes."
-config/version="0.35"
+- V0.35: Now has a gameplay loop! When you hit the floor, you go back to the start; When you reach the green platform, the game ends! Pretty neat, but wait until you get to read the messages for landings and the likes.
+- V0.4: Still has no HUD, but now has 3 different levels! The third one is quite tricky. Figured out the call_deferred function, howit works and how I can use it to guarantee no bugs show up, since they give me the creepies. Have fun!"
+config/version="0.4"
 run/main_scene="uid://c41qqpgk3iuau"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://rpyspug527pc"
+config/icon="uid://crcfpeafkdy8j"
 
 [input]
 
