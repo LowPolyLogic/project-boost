@@ -30,10 +30,12 @@ func _on_body_entered(body: Node) -> void:
 		"Launch Pad":
 			print("Standing bye four takeoffs!")
 		_:
+			var twin_die = create_tween()
+			twin_die.tween_interval(1.0)
+			set_process(false)
 			print("NIGHTMARE OVER! YOU HAVE HITTED A KILL YOU")
-			get_tree().call_deferred("reload_current_scene")
-
+			twin_die.tween_callback(get_tree().reload_current_scene)
+			
 # This function takes in level_two as the parameter, so thou must declareth str
 func victorious_win(level_two: String) -> void:
 		get_tree().call_deferred("change_scene_to_file", level_two)
-		

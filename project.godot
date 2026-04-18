@@ -23,7 +23,6 @@ config/description="Now a little bit more polished, with the player being instan
 config/version="0.4"
 run/main_scene="uid://c41qqpgk3iuau"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://crcfpeafkdy8j"
 
 [input]
 
